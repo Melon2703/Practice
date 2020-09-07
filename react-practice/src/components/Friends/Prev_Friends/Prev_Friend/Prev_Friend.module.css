@@ -1,0 +1,14 @@
+.prev_Friends {
+    display: inline-block;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+.prev_Friends div {
+    text-align: center;
+}
+
+.prev_Friends img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}

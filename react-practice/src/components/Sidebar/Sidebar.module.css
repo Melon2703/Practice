@@ -1,0 +1,19 @@
+.sidebar {
+    grid-area: aside;
+    padding: 1em 0 0 2em;
+}
+
+.item {
+    display: block;
+    color : rgba(0, 191, 255);
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.item:hover {
+    background: rgba(0, 191, 255, .15);
+}
+
+a.active {
+    color: whitesmoke;
+}

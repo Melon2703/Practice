@@ -1,0 +1,30 @@
+.sendButton {
+    color : white;
+    border-radius: 5px;
+    padding: 5px;
+    border-width: 0px;
+    background: deepskyblue;
+    transition: all .5s;
+    margin-top: .5em;
+    outline: none;
+}
+.sendButton:hover {
+    background: lightslategray;
+}
+
+.loginBlock {
+    text-align: center;
+}
+.loginBlock input {
+    border: 2px solid black;
+    margin-bottom: 10px;
+    background: rgba(0, 191, 255, .15);
+    border-radius: 10px;
+}
+.loginBlock input[type="checkbox"] {
+    display: none;
+}
+.loginBlock img {
+    height: 100px;
+    size: 150px;
+}

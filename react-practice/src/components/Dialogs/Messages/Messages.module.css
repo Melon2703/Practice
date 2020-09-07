@@ -1,0 +1,32 @@
+
+.dialogs {
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dialogs_items {
+    padding: 10px;
+    flex: 2;
+}
+
+.dialog {
+    text-decoration: none;
+
+}
+
+.dialog.active {
+    color: gold;
+}
+
+.messages {
+    padding: 10px;
+    flex: 10;
+}
+.messages textarea {
+    display: block;
+}
+
+.message {
+
+}

@@ -1,0 +1,12 @@
+.header {
+    background: rgba(4,2,123,1);
+    width: 100%;
+    display: block;
+    position: fixed;
+    z-index: 1000;
+
+}
+
+.header img {
+    width: 60px;
+}

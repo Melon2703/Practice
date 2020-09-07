@@ -1,0 +1,10 @@
+.users {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3em;
+}
+
+

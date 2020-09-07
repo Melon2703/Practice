@@ -1,0 +1,54 @@
+
+.profileForm {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+
+.contacts {
+    text-align: center;
+}
+.profileForm b {
+    color: black;
+    display: inline-block;
+    margin-bottom: .2em;
+}
+
+.profileForm ul {
+    margin-top: initial;
+    padding-left: initial;
+}
+
+.profileForm button {
+    display: block;
+    color : white;
+    border-radius: 5px;
+    padding: 5px;
+    border-width: 0px;
+    background: deepskyblue;
+    transition: all .5s;
+    margin-top: .5em;
+    outline: none;
+}
+.profileForm button:hover {
+    background: lightslategray;
+}
+.profileForm li {
+    color: lightslategray;
+    list-style: none;
+}
+.profileForm span, .profileForm li{
+    margin-top: .5em;
+}
+.profileForm .contacts{
+    margin-top: .5em;
+}
+.profileForm > div {
+    text-align: center;
+    margin-bottom: .7em;
+}
+.profileForm div:first-child > b {
+    color: black;
+    display: block;
+}
+
