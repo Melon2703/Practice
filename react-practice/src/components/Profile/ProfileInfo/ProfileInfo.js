@@ -8,7 +8,6 @@ import cn from "classnames";
 const ProfileInfo = (props) => {
 
     let [isMode, setIsMode] = useState(false);
-    console.log(isMode)
 
     let sendData = (formData) => {
         props.setMyData(formData).then((response) => {
@@ -73,8 +72,8 @@ const ProfileBox = (props) => {
                 <b onClick={() => {}}>Контакты</b>
             </div>
                 <ul>
-                    {Object.keys(props.user.contacts).map(contact => {
-                        return <Contact socialPlace={contact} contact={props.user.contacts[contact]}/>
+                    {Object.keys(props.user.contacts).map((contact, id) => {
+                        return <Contact key={id} socialPlace={contact} contact={props.user.contacts[contact]}/>
                     })}
                 </ul>
                 {props.isAuth && props.isOwner ? <button onClick={props.changeMode}>Редактировать</button> : null}
@@ -87,7 +86,7 @@ const ProfileBox = (props) => {
 export const Contact = (props) => {
     return (
         <li>
-            <span><b>{props.socialPlace}: </b> {props.contact}</span>
+            <span><b>{props.socialPlace}: </b> <a href={props.contact}>{props.contact}</a></span>
         </li>
     )
 }

@@ -14,8 +14,9 @@ class Friends extends React.Component {
     }
 
     render() {
+        console.log("friends")
         let friends = this.props.users.filter(user => user.followed).map(user => {
-            return <Friend photo={user.photos.small} name={user.name}/>
+            return <Friend key={user.id} photo={user.photos.small} name={user.name}/>
         })
 
         if(this.props.isAuth){
@@ -33,7 +34,6 @@ class Friends extends React.Component {
 }
 
 let mapStateToProps = (state) =>{
-    debugger
     return {
         users : state.usersPage.users,
         currentPage: state.usersPage.currentPage,

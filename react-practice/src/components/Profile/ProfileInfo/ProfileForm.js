@@ -23,8 +23,8 @@ const ProfileForm = (props) => {
                 <div>
                     <b>Контакты</b>
                     <ul>
-                        {Object.keys(props.user.contacts).map(contact => {
-                            return <Contact socialPlace={contact} />
+                        {Object.keys(props.user.contacts).map((contact, id) => {
+                            return <Contact key={id} socialPlace={contact} />
                         })}
                     </ul>
                 </div>

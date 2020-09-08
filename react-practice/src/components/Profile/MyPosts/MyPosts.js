@@ -6,11 +6,11 @@ import {isValue, maxLength} from "../../../Validators/ValidatorsForForms";
 import {Textarea} from "../../ComponentsForFields/ComponentsForFields";
 import cn from "classnames";
 
-const MyPosts = React.memo((props) => {
+const MyPosts = React.memo(props => {
 
     let postsMessages = props.profilePage.postsData.map((item) => {
         return (
-            <Post  message={item.message} like_counts={item.like_counts} id={item.id}/>
+            <Post key={item.id} message={item.message} like_counts={item.like_counts} id={item.id}/>
         );
     });
 
@@ -23,7 +23,7 @@ const MyPosts = React.memo((props) => {
 
     return (
             <div className={cn(styles.posts)}>
-                <hr noshade/>
+                <hr/>
                     <div>
                         <h2>Мои посты</h2>
                         <AddNewPostRedux onSubmit={onSubmit}/>

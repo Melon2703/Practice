@@ -25,6 +25,7 @@ class ProfileContainer extends React.Component{
     }
 
     render(){
+        console.log("profile")
         if(this.props.isAuth && this.props.match.params.userId && (+this.props.match.params.userId === this.props.id)){
             return <Redirect to={`/profile`}/>
         }
@@ -39,11 +40,11 @@ class ProfileContainer extends React.Component{
 
 let mapStateToProps = (state) => {
     return {
-    user: state.profilePage.user,
-    status : state.profilePage.status,
-    id: state.auth.id,
+        user: state.profilePage.user,
+        status : state.profilePage.status,
+        id: state.auth.id,
         isAuth: state.isAuth
-}
+    }
 };
 
 

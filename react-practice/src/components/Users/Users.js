@@ -7,7 +7,7 @@ import cn from "classnames";
 const Users = (props) => {
     let users = props.users.map(item => {
         return (
-            <User id={item.id}
+            <User key={item.id} id={item.id}
                   name={item.name}
                   following={item.followed}
                   status={item.status}
