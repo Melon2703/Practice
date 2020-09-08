@@ -7,7 +7,6 @@ const SET_STATUS = `profile/SET-STATUS`;
 const DELETE_POST = `profile/DELETE-POST`;
 const SET_PHOTO = `profile/SET-PHOTO`;
 
-
 let initialState = {
     postsData: [],
     user: null,
@@ -120,7 +119,8 @@ export const setStatusTC = (status) => {
 }
 
 export const getUser = (userId) => {
-    return async (dispatch) => {
+    return async (dispatch, getState) => {
+
       let data = await profileAPI.setUser(userId);
                 dispatch(setUserProfile(data));
     }
