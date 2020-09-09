@@ -18,8 +18,6 @@ import {
     getUsers
 } from "../../Redux/usersSelectors";
 
-
-
 class UsersAPIComponent extends React.Component{
 
     // getUsers(currentPage, pageSize, isFetching){
@@ -31,9 +29,7 @@ class UsersAPIComponent extends React.Component{
         this.props.getUsersFromServer(1);
     }
 
-
     render() {
-        console.log("users")
         return (
           <div>
               {this.props.isFetching

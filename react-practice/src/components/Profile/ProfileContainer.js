@@ -16,19 +16,16 @@ class ProfileContainer extends React.Component{
     }
 
     componentDidMount() {
-        console.log("mount")
         this.loadUser();
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if( prevProps.match.params.userId !== this.props.match.params.userId ){
-            console.log("update")
             this.loadUser();
         }
     }
 
     render(){
-        console.log("profile")
         if(this.props.isAuth && this.props.match.params.userId && (+this.props.match.params.userId === this.props.id)){
             return <Redirect to={`/profile`}/>
         }

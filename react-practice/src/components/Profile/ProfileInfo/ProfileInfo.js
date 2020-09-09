@@ -14,7 +14,6 @@ const ProfileInfo = (props) => {
             setIsMode(!isMode)
         });
     }
-
         let loadFile = (e) => {
             if (e.target.files.length) {
                 props.setPhoto(e.target.files[0])

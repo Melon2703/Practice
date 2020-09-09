@@ -3,11 +3,9 @@ import {Field, reduxForm, stopSubmit} from "redux-form";
 import {createComponent, Input} from "../../ComponentsForFields/ComponentsForFields";
 import styles from "./ProfileForm.module.css";
 import cn from "classnames";
-import {connect} from "react-redux";
 
 
 const ProfileForm = (props) => {
-
     return (
             <form onSubmit={props.handleSubmit} className={cn(styles.profileForm)}>
                 {props.error && <div>{props.error}</div>}
