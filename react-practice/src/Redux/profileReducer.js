@@ -119,8 +119,7 @@ export const setStatusTC = (status) => {
 }
 
 export const getUser = (userId) => {
-    return async (dispatch, getState) => {
-
+    return async (dispatch) => {
       let data = await profileAPI.setUser(userId);
                 dispatch(setUserProfile(data));
     }

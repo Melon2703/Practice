@@ -14,7 +14,6 @@ class Friends extends React.Component {
     }
 
     render() {
-        console.log("friends")
         let friends = this.props.users.filter(user => user.followed).map(user => {
             return <Friend key={user.id} photo={user.photos.small} name={user.name}/>
         })
