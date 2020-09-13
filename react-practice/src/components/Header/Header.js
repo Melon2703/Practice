@@ -1,28 +1,30 @@
 import React from "react";
-import styles from './Header.module.css';
+import styles from './Header.module.scss';
 import {NavLink} from "react-router-dom";
 import cn from "classnames";
+import logo from "./../../assets/images/gradient_2.png"
 
 const Header = (props) => {
     return (
-        <header className={styles.header}>
+        <header className={cn(styles.header)}>
             <NavLink to='/'>
-                <img src="https://static.rfstat.com/renderforest/images/v2/logo-homepage/gradient_2.png"></img>
+                <img src={logo}></img>
             </NavLink>
-                <div className={styles.loginBlock}>
-                        { props.isAuth === false ? `Login` :
-                            <div>
-                                <NavLink to={`/profile/${props.id}`}>
-                                    <span>{props.login}</span>
-                                </NavLink>
+            <div className={cn(styles.loginBlock)}>
+                {props.isAuth === false ?
+                    <NavLink to={`/login`}>
+                        <span>Login</span>
+                    </NavLink>
+                    :
+                    <div>
+                        <NavLink to={`/profile/${props.id}`}>
+                            <span>{props.login}</span>
+                        </NavLink>
 
-                                <button className={cn(styles.logout_button)} onClick={props.getLogOut}>Выйти</button>
-                            </div>
-                            }
-                </div>
-
-
-
+                        <button className={cn(styles.logout_button)} onClick={props.getLogOut}>Выйти</button>
+                    </div>
+                }
+            </div>
         </header>
     );
 

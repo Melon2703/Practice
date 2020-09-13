@@ -4,34 +4,35 @@ import {createComponent, Input} from "../../ComponentsForFields/ComponentsForFie
 import styles from "./ProfileForm.module.css";
 import cn from "classnames";
 
-
 const ProfileForm = (props) => {
     return (
-            <form onSubmit={props.handleSubmit} className={cn(styles.profileForm)}>
-                {props.error && <div>{props.error}</div>}
-                <div>
-                    <b>Имя</b> {createComponent(Input, `fullName`, `Введите свое имя`)}
-                </div>
-                <div>
-                    <b>В поиске работы</b> {createComponent(Input, `lookingForAJob`, ``, null, {type: `checkbox`})}
-                </div>
-                <div>
-                    <b>Описание работы</b> {createComponent(Input, `lookingForAJobDescription`, `Какая работа вас интересует`)}
-                </div>
-                <div>
-                    <b>Контакты</b>
-                    <ul>
-                        {Object.keys(props.user.contacts).map((contact, id) => {
-                            return <Contact key={id} socialPlace={contact} />
-                        })}
-                    </ul>
-                </div>
-                <button>Сохранить изменения</button>
-                <button onClick={() => {
-                    stopSubmit();
-                    props.changeMode()
-                }}>Отмена</button>
-            </form>
+        <form onSubmit={props.handleSubmit} className={cn(styles.profileForm)}>
+            {props.error && <div>{props.error}</div>}
+            <div>
+                <b>Имя</b> {createComponent(Input, `fullName`, `Введите свое имя`)}
+            </div>
+            <div>
+                <b>В поиске работы</b> {createComponent(Input, `lookingForAJob`, ``, null, {type: `checkbox`})}
+            </div>
+            <div>
+                <b>Описание
+                    работы</b> {createComponent(Input, `lookingForAJobDescription`, `Какая работа вас интересует`)}
+            </div>
+            <div>
+                <b>Контакты</b>
+                <ul>
+                    {Object.keys(props.user.contacts).map((contact, id) => {
+                        return <Contact key={id} socialPlace={contact}/>
+                    })}
+                </ul>
+            </div>
+            <button>Сохранить изменения</button>
+            <button onClick={() => {
+                stopSubmit();
+                props.changeMode()
+            }}>Отмена
+            </button>
+        </form>
     )
 }
 
@@ -45,5 +46,5 @@ const Contact = (props) => {
 
 export default reduxForm({
     form: `ProfileForm`,
-    enableReinitialize : true
+    enableReinitialize: true
 })(ProfileForm);

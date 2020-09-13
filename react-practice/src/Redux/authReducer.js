@@ -62,28 +62,28 @@ export const logIn = () => {
 export const getLogIn = (logData) => {
     return async (dispatch, getState) => {
         let response = await AuthAPI.getLogIn(logData);
-            if (response.data.resultCode === 0) {
-                dispatch(logIn()).then(response => {
-                    dispatch(getUsersFromServer(getState().usersPage.currentPage));
-                    dispatch(setCaptcha(null));
-                });
-            } else if (response.data.resultCode === 10) {
-                AuthAPI.getCaptcha().then(url => {
-                    dispatch(setCaptcha(url));
-                })
-            } else {
-                let err = response.data.messages ? response.data.messages[0] : `Some error`;
-                dispatch(stopSubmit(`login`, {_error: err}))
-            }
+        if (response.data.resultCode === 0) {
+            dispatch(logIn()).then(response => {
+                dispatch(getUsersFromServer(getState().usersPage.currentPage));
+                dispatch(setCaptcha(null));
+            });
+        } else if (response.data.resultCode === 10) {
+            AuthAPI.getCaptcha().then(url => {
+                dispatch(setCaptcha(url));
+            })
+        } else {
+            let err = response.data.messages ? response.data.messages[0] : `Some error`;
+            dispatch(stopSubmit(`login`, {_error: err}))
+        }
     }
 }
 
 export const getLogOut = () => {
     return async (dispatch) => {
         let response = await AuthAPI.getLogOut();
-            if (response.data.resultCode === 0) {
-                dispatch(setUserData(null, null, null, false));
-            }
+        if (response.data.resultCode === 0) {
+            dispatch(setUserData(null, null, null, false));
+        }
     }
 }
 

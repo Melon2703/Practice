@@ -4,23 +4,8 @@ import {usersAPI} from "../API/API";
 // const SET_FRIENDS = `SET-FRIENDS`;
 
 
-
-
-
-
-
-
-
-
-
-
-
 // ЛОГИКА АНАЛОГИЧНА ТОМУ, ЧТО ИСПОЛЬЗУЕТСЯ ДЛЯ ЮЗЕРОВ,
 // НО НА СЕРВЕРЕ НЕТ ОТДЕЛЬНЫХ ДРУЗЕЙ, ПОЭТОМУ РЕАЛИЗОВАТЬ ЭТО НЕЛЬЗЯ
-
-
-
-
 
 
 let initialState = {
@@ -30,8 +15,8 @@ let initialState = {
 
 };
 
-let friendsReducer = (state=initialState, action) => {
-    switch (action.type){
+let friendsReducer = (state = initialState, action) => {
+    switch (action.type) {
         // case SET_FRIENDS: {
         //     return {
         //         ...state,
@@ -72,4 +57,4 @@ let friendsReducer = (state=initialState, action) => {
     }
 }*/
 
- export default friendsReducer;
+export default friendsReducer;

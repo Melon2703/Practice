@@ -2,6 +2,7 @@
     color: cornflowerblue;
     margin: 10px 0;
 }
+
 .item hr {
     border: 1.5px solid lightslategray;
     border-radius: 5px;
@@ -9,6 +10,7 @@
     background: lightslategray;
     width: 10%;
 }
+
 .item b {
     color: lightslategray;
 }

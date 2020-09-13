@@ -7,7 +7,7 @@ import ContainerApp from "./App";
 //ContainerApp используется для адекватного теста (для App необходим Provider и BrowserRouter,
 // но они находятся снаружи, поэтому в тесте они не воспринимаются и выдается ошибка)
 
-    ReactDOM.render(<ContainerApp />,document.getElementById('root'));
+ReactDOM.render(<ContainerApp/>, document.getElementById('root'));
 
 
 // If you want your app to work offline and load faster, you can change

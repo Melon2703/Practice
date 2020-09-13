@@ -1,11 +1,10 @@
 import React from "react";
-import styles from './Friends.module.css';
+import styles from './Friends.module.scss';
 import {connect} from "react-redux";
 import Friend from "./Friend/Friend";
 import {Redirect} from "react-router-dom";
 import {getUsersFromServer} from "../../Redux/usersReducer";
 import cn from "classnames";
-
 
 class Friends extends React.Component {
 
@@ -18,7 +17,7 @@ class Friends extends React.Component {
             return <Friend key={user.id} photo={user.photos.small} name={user.name}/>
         })
 
-        if(this.props.isAuth){
+        if (this.props.isAuth) {
             return (
                 <div className={cn(styles.friends)}>
                     <h2>Ваши друзья</h2>
@@ -32,9 +31,9 @@ class Friends extends React.Component {
     }
 }
 
-let mapStateToProps = (state) =>{
+let mapStateToProps = (state) => {
     return {
-        users : state.usersPage.users,
+        users: state.usersPage.users,
         currentPage: state.usersPage.currentPage,
         isAuth: state.auth.isAuth
     }

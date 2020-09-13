@@ -8,11 +8,11 @@ const TOGGLE_IS_FETCHING = `user/TOGGLE-IS-FETCHING`
 const TOGGLE_IS_DISABLE = `user/TOGGLE-IS-DISABLE`
 
 let initialState = {
-users: [],
+    users: [],
     pageSize: 5,
     totalUsersCount: 0,
     currentPage: 1,
-    isFetching:false,
+    isFetching: false,
     isDisable: [],
 };
 
@@ -21,8 +21,8 @@ const usersReducer = (state = initialState, action) => {
         case CHANGE_FOLLOWING:
             return {
                 ...state,
-                users: state.users.map( u => {
-                    if (u.id === action.id){
+                users: state.users.map(u => {
+                    if (u.id === action.id) {
                         return {
                             ...u,
                             followed: action.bool,
@@ -35,7 +35,7 @@ const usersReducer = (state = initialState, action) => {
         case SET_USERS:
             return {
                 ...state,
-                users: [ ...action.users],
+                users: [...action.users],
             };
         case CHANGE_CURRENT_PAGE:
             return {
@@ -48,7 +48,7 @@ const usersReducer = (state = initialState, action) => {
                 totalUsersCount: action.count
             };
 
-            case TOGGLE_IS_FETCHING:
+        case TOGGLE_IS_FETCHING:
             return {
                 ...state,
                 isFetching: action.isFetching
@@ -56,9 +56,9 @@ const usersReducer = (state = initialState, action) => {
 
         case TOGGLE_IS_DISABLE:
 
-                return {
+            return {
                 ...state,
-                isDisable : action.dis ? [...state.isDisable, action.userId] : state.isDisable.filter(id => id !== action.userId)
+                isDisable: action.dis ? [...state.isDisable, action.userId] : state.isDisable.filter(id => id !== action.userId)
             }
         default:
             return state;
@@ -89,7 +89,7 @@ export const changeCurrentPage = (numb) => {
 
 export const changeFetching = (bool) => {
     return {
-        type:TOGGLE_IS_FETCHING,
+        type: TOGGLE_IS_FETCHING,
         isFetching: bool,
     }
 
@@ -97,9 +97,9 @@ export const changeFetching = (bool) => {
 
 export const changeDisable = (bool, id) => {
     return {
-        type:TOGGLE_IS_DISABLE,
+        type: TOGGLE_IS_DISABLE,
         dis: bool,
-        userId : id
+        userId: id
     }
 
 }
@@ -111,9 +111,9 @@ export const getUsersFromServer = (currentPage) => {
         dispatch(changeFetching(!getState().usersPage.isFetching));
         dispatch(changeCurrentPage(currentPage));
         let data = await usersAPI.getUsers(currentPage, getState().usersPage.pageSize);
-            dispatch(setUsers(data.items));
-            dispatch(changeTotalCount(data.totalCount));
-            dispatch(changeFetching(!getState().usersPage.isFetching));
+        dispatch(setUsers(data.items));
+        dispatch(changeTotalCount(data.totalCount));
+        dispatch(changeFetching(!getState().usersPage.isFetching));
     }
 }
 
@@ -142,7 +142,7 @@ export const followUser = (id) => {
     return (dispatch) => {
         dispatch(changeDisable(true, id));
         usersAPI.follow(id).then(response => {
-            if(response.data.resultCode===0){
+            if (response.data.resultCode === 0) {
                 dispatch(changeFollowing(id, true));
                 dispatch(changeDisable(false, id));
             }
@@ -153,12 +153,12 @@ export const followUser = (id) => {
 export const deleteFollowUser = (id) => {
     return (dispatch) => {
         dispatch(changeDisable(true, id));
-         usersAPI.deleteFollowing(id).then(response => {
-             if(response.data.resultCode===0){
-                 dispatch(changeFollowing(id, false));
-                 dispatch(changeDisable(false, id));
-             }
-         });
+        usersAPI.deleteFollowing(id).then(response => {
+            if (response.data.resultCode === 0) {
+                dispatch(changeFollowing(id, false));
+                dispatch(changeDisable(false, id));
+            }
+        });
     }
 }
 

@@ -1,9 +1,8 @@
 import React from "react";
 import {Field, reduxForm} from "redux-form";
 
-
-class ProfileStatus extends React.Component{
-
+//Вариаця классовой компоненты (не используется)
+class ProfileStatus extends React.Component {
 
     constructor(props) {
         super(props);
@@ -43,7 +42,7 @@ class ProfileStatus extends React.Component{
 
         return (
             <div>
-                { !this.state.isMode ?
+                {!this.state.isMode ?
 
                     <div>
                         <span onDoubleClick={this.changeMode}>{this.props.status}</span>
@@ -63,7 +62,7 @@ const StatusForm = (props) => {
 
     return (
         <form onBlur={props.handleSubmit}>
-            <Field component='input' name='StatusForm' autoFocus={true} />
+            <Field component='input' name='StatusForm' autoFocus={true}/>
         </form>
     )
 }

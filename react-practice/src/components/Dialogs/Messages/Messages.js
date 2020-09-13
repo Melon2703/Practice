@@ -1,7 +1,6 @@
 import React from "react";
 import classes from './Messages.module.css'
 import Message from "./Message/Message";
-import Profile from "../../Profile/Profile";
 import {Field, reduxForm} from "redux-form";
 import {Textarea} from "../../ComponentsForFields/ComponentsForFields";
 import {isValue, maxLength} from "../../../Validators/ValidatorsForForms";

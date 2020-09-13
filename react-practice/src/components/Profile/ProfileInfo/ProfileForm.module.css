@@ -8,6 +8,7 @@
 .contacts {
     text-align: center;
 }
+
 .profileForm b {
     color: black;
     display: inline-block;
@@ -21,7 +22,7 @@
 
 .profileForm button {
     display: block;
-    color : white;
+    color: white;
     border-radius: 5px;
     padding: 5px;
     border-width: 0px;
@@ -30,23 +31,29 @@
     margin-top: .5em;
     outline: none;
 }
+
 .profileForm button:hover {
     background: lightslategray;
 }
+
 .profileForm li {
     color: lightslategray;
     list-style: none;
 }
-.profileForm span, .profileForm li{
+
+.profileForm span, .profileForm li {
     margin-top: .5em;
 }
-.profileForm .contacts{
+
+.profileForm .contacts {
     margin-top: .5em;
 }
+
 .profileForm > div {
     text-align: center;
     margin-bottom: .7em;
 }
+
 .profileForm div:first-child > b {
     color: black;
     display: block;

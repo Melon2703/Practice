@@ -1,6 +1,7 @@
 .posts {
     text-align: center;
 }
+
 .posts textarea {
     overflow: auto;
     resize: none;
@@ -8,9 +9,11 @@
     height: 50px;
     border-radius: 5px;
 }
+
 .allPosts {
 
 }
+
 .posts hr {
     border: 1.5px solid lightslategray;
     border-radius: 5px;
@@ -19,7 +22,7 @@
 }
 
 .addPostButton {
-    color : white;
+    color: white;
     border-radius: 5px;
     padding: 5px;
     border-width: 0px;
@@ -28,6 +31,7 @@
     margin-top: .5em;
     outline: none;
 }
+
 .addPostButton:hover {
     background: lightslategray;
 }

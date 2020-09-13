@@ -14,7 +14,6 @@ const MyPosts = React.memo(props => {
         );
     });
 
-
     let onSubmit = (formData) => {
 
         props.addPost(formData.addNewPost);
@@ -22,16 +21,16 @@ const MyPosts = React.memo(props => {
     }
 
     return (
-            <div className={cn(styles.posts)}>
-                <hr/>
-                    <div>
-                        <h2>Мои посты</h2>
-                        <AddNewPostRedux onSubmit={onSubmit}/>
-                    </div>
-                <div className={cn(styles.allPosts)}>
-                    {postsMessages}
-                </div>
+        <div className={cn(styles.posts)}>
+            <hr/>
+            <div>
+                <h2>Мои посты</h2>
+                <AddNewPostRedux onSubmit={onSubmit}/>
             </div>
+            <div className={cn(styles.allPosts)}>
+                {postsMessages}
+            </div>
+        </div>
     );
 });
 
@@ -40,7 +39,7 @@ let MaxLength = maxLength(20);
 const addNewPost = (props) => {
 
     return (
-        <form onSubmit={props.handleSubmit} >
+        <form onSubmit={props.handleSubmit}>
             <Field component={Textarea} name='addNewPost' validate={[isValue, MaxLength]}/>
             <div>
                 <button className={cn(styles.addPostButton)}>Добавить пост</button>

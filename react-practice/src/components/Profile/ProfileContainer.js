@@ -6,11 +6,11 @@ import {Redirect, withRouter} from "react-router-dom";
 import LoginHOC from "../Login/LoginHOC";
 import {compose} from "redux";
 
-class ProfileContainer extends React.Component{
+class ProfileContainer extends React.Component {
 
-    loadUser(){
+    loadUser() {
         let userId = this.props.match.params.userId;
-        if(!userId) userId = this.props.id;
+        if (!userId) userId = this.props.id;
         this.props.getUser(userId);
         this.props.getStatus(userId);
     }
@@ -20,19 +20,20 @@ class ProfileContainer extends React.Component{
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if( prevProps.match.params.userId !== this.props.match.params.userId ){
+        if (prevProps.match.params.userId !== this.props.match.params.userId) {
             this.loadUser();
         }
     }
 
-    render(){
-        if(this.props.isAuth && this.props.match.params.userId && (+this.props.match.params.userId === this.props.id)){
+    render() {
+        //Проверка, чтобы адекватно работали проверки для форм
+        if (this.props.isAuth && this.props.match.params.userId && (+this.props.match.params.userId === this.props.id)) {
             return <Redirect to={`/profile`}/>
         }
         return (
             <Profile isAuth={this.props.isAuth} setPhoto={this.props.setPhoto} isOwner={!this.props.match.params.userId}
                      user={this.props.user} id={this.props.id} userId={this.props.match.params.userId}
-                      status={this.props.status} setStatus={this.props.setStatus} setMyData={this.props.setMyData}/>
+                     status={this.props.status} setStatus={this.props.setStatus} setMyData={this.props.setMyData}/>
         );
     }
 }
@@ -40,18 +41,17 @@ class ProfileContainer extends React.Component{
 let mapStateToProps = (state) => {
     return {
         user: state.profilePage.user,
-        status : state.profilePage.status,
+        status: state.profilePage.status,
         id: state.auth.id,
         isAuth: state.isAuth
     }
 };
 
-
 export default compose(
     connect(mapStateToProps, {
         getUser,
         getStatus,
-        setStatus : setStatusTC,
+        setStatus: setStatusTC,
         setPhoto,
         setMyData
     }),

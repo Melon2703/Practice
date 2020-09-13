@@ -2,6 +2,7 @@
     margin: 10px 0;
     color: deepskyblue;
 }
+
 .description b {
     color: lightslategray;
 }
@@ -25,11 +26,13 @@
     flex-direction: column;
     text-align: center;
 }
+
 .photo_and_load input {
     display: none;
 }
+
 .photo_and_load label {
-    color : white;
+    color: white;
     border-radius: 5px;
     padding: 5px;
     border-width: 0px;
@@ -38,6 +41,7 @@
     margin-top: .5em;
     outline: none;
 }
+
 .photo_and_load label:hover {
     background: lightslategray;
 }
@@ -51,6 +55,7 @@
 .contacts {
     text-align: center;
 }
+
 .contacts b {
     color: black;
 }
@@ -62,7 +67,7 @@
 
 .profileBox button {
     display: block;
-    color : white;
+    color: white;
     border-radius: 5px;
     padding: 5px;
     border-width: 0px;
@@ -71,28 +76,34 @@
     margin-top: .5em;
     outline: none;
 }
+
 .profileBox button:hover {
     background: lightslategray;
 }
+
 .profileBox li {
     list-style: none;
 }
-.profileBox span, .profileBox li{
+
+.profileBox span, .profileBox li {
     margin-top: .5em;
 }
-.profileBox .contacts{
+
+.profileBox .contacts {
     margin-top: .5em;
 }
+
 .profileBox > div {
     text-align: center;
     margin-bottom: .7em;
 }
+
 .profileBox div:first-child > b {
     color: black;
     display: block;
 }
 
-.userInfo{
+.userInfo {
     flex: 3;
     display: flex;
     flex-direction: row;
@@ -102,6 +113,7 @@
     border-left: 3px solid lightslategray;
     border-radius: 5px;
 }
+
 .status_and_info {
     flex: 2;
     padding-left: 20px;

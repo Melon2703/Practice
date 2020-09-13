@@ -22,7 +22,7 @@ import {isValue} from "../../Validators/ValidatorsForForms";
 // }
 
 export const createComponent = (component, name, placeholder = null, validators = null, props = {}) => {
-   return <div>
+    return <div>
         <Field component={component} name={name} placeholder={placeholder} validate={validators} {...props}/>
     </div>
 }
@@ -39,7 +39,7 @@ export const Textarea = (props) => {
                 <textarea {...input} {...restprops}/>
             </div>
 
-            { validator && <span>{meta.error}</span> }
+            {validator && <span>{meta.error}</span>}
         </div>
 
     )
@@ -56,7 +56,7 @@ export const Input = (props) => {
                 <input {...input} {...restprops}/>
             </div>
 
-            { validator && <span>{meta.error}</span> }
+            {validator && <span>{meta.error}</span>}
         </div>
 
     )

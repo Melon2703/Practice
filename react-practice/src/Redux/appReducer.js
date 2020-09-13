@@ -26,8 +26,8 @@ const appInitialized = () => {
 }
 
 export const initial = () => (dispatch) => {
-        dispatch(logIn()).then(resolve => {
-            console.log(resolve);
+    dispatch(logIn()).then(resolve => {
+        console.log(resolve);
         dispatch(appInitialized());
     })
 }

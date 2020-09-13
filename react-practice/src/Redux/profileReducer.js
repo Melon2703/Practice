@@ -14,7 +14,7 @@ let initialState = {
 };
 
 
- const profileReducer = (state = initialState, action) => {
+const profileReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case ADD_POST: {
@@ -30,14 +30,14 @@ let initialState = {
             };
         }
 
-        case SET_USER_PROFILE:{
+        case SET_USER_PROFILE: {
             return {
                 ...state,
                 user: action.user
             }
         }
 
-        case SET_STATUS:{
+        case SET_STATUS: {
 
             return {
                 ...state,
@@ -55,24 +55,24 @@ let initialState = {
 
         case SET_PHOTO: {
 
-            return  {
+            return {
                 ...state,
-                user : {...state.user, photos : action.photos}
+                user: {...state.user, photos: action.photos}
             }
         }
 
         default:
             return state;
     }
- }
+}
 
 
- export const savePhoto = (photos) => {
-     return {
-         type: SET_PHOTO,
-         photos
-     }
- }
+export const savePhoto = (photos) => {
+    return {
+        type: SET_PHOTO,
+        photos
+    }
+}
 
 export const addPost = (text) => {
     return {
@@ -104,8 +104,8 @@ export const setStatus = (status) => {
 
 export const getStatus = (id) => {
     return async (dispatch) => {
-       let response =  await profileAPI.getStatus(id);
-            dispatch(setStatus(response.data));
+        let response = await profileAPI.getStatus(id);
+        dispatch(setStatus(response.data));
     }
 }
 
@@ -113,36 +113,36 @@ export const setStatusTC = (status) => {
     return (dispatch) => {
         profileAPI.setStatus(status)
             .then(response => {
-            dispatch(setStatus(status))
-        })
+                dispatch(setStatus(status))
+            })
     }
 }
 
 export const getUser = (userId) => {
     return async (dispatch) => {
-      let data = await profileAPI.setUser(userId);
-                dispatch(setUserProfile(data));
+        let data = await profileAPI.setUser(userId);
+        dispatch(setUserProfile(data));
     }
 }
 
 export const setPhoto = (photoFile) => {
     return async (dispatch) => {
         let response = await profileAPI.loadPhoto(photoFile);
-            if(response.data.resultCode === 0){
-                dispatch(savePhoto(response.data.data.photos))
-            }
+        if (response.data.resultCode === 0) {
+            dispatch(savePhoto(response.data.data.photos))
+        }
     }
 }
 
 export const setMyData = (myData) => {
     return async (dispatch, getState) => {
         let response = await profileAPI.changeMyData(myData);
-            if(response.data.resultCode === 0){
-                dispatch(getUser(getState().auth.id));
-            } else {
-                dispatch(stopSubmit(`ProfileForm`, {_error: response.data.messages[0]}));
-                return Promise.reject();
-            }
+        if (response.data.resultCode === 0) {
+            dispatch(getUser(getState().auth.id));
+        } else {
+            dispatch(stopSubmit(`ProfileForm`, {_error: response.data.messages[0]}));
+            return Promise.reject();
+        }
     }
 }
 

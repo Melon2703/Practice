@@ -5,8 +5,7 @@ import Preloader from "../Common/Preloader/Proloader";
 
 const Profile = (props) => {
 
-
-    if(!props.user) {
+    if (!props.user) {
         return (
             <div>
                 <Preloader/>

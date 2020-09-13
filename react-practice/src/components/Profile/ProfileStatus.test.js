@@ -4,12 +4,6 @@ import ProfileStatusWithHoocks from "./ProfileStatusWithHoocks";
 
 describe(`all tests of ProfileStatus`, () => {
 
-    // test(`check state.isMode`, () => {
-    //     const Status = TestRenderer.create(<ProfileStatusWithHoocks />);
-    //     const inst = Status.getInstance();
-    //     expect(inst.state.isMode).toBe(false);
-    // });
-
     test(`what does the span contain `, () => {
         const Status = TestRenderer.create(<ProfileStatusWithHoocks status={123}/>);
         const root = Status.root;
@@ -31,20 +25,5 @@ describe(`all tests of ProfileStatus`, () => {
             const input = root.findByType(`input`)
         }).toThrow();
     })
-
-
-    // test(`input new`, () => {
-    //     let Status;
-    //     act(() => {
-    //          Status = TestRenderer.create(<ProfileStatusWithHoocks status={123}/>);
-    //     });
-    //     const root = Status.root;
-    //     const span = root.findByType(`span`);
-    //     act(() => {
-    //         span.props.onDoubleClick();
-    //     });
-    //
-    //     expect(span).not.toBeNull();
-    // })
 
 });

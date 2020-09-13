@@ -11,15 +11,13 @@ export const getTotalUsersCount = (state) => {
 }
 
 
-
 const getIsFetchingSelector = (state) => {
     return state.usersPage.isFetching
 }
 
-export const getIsFetching = createSelector(getIsFetchingSelector,(isFetching) => {
+export const getIsFetching = createSelector(getIsFetchingSelector, (isFetching) => {
     return isFetching;
 });
-
 
 
 export const getCurrentPage = (state) => {

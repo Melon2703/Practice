@@ -10,10 +10,12 @@ const Sidebar = (props) => {
                 <NavLink to='/profile' /*activeClassName={classes.active}*/ className={classes.item}>Профиль</NavLink>
             </div>
             <div>
-                <NavLink to='/users' /*activeClassName={classes.active}*/  className={classes.item}>Пользователи</NavLink>
+                <NavLink to='/users' /*activeClassName={classes.active}*/
+                         className={classes.item}>Пользователи</NavLink>
             </div>
             <div>
-                <NavLink to='/messages' /*activeClassName={classes.active}*/ className={classes.item}>Сообщения</NavLink>
+                <NavLink to='/messages' /*activeClassName={classes.active}*/
+                         className={classes.item}>Сообщения</NavLink>
             </div>
             <div>
                 <NavLink to='/friends' /*activeClassName={classes.active}*/ className={classes.item}>Друзья</NavLink>
@@ -26,7 +28,8 @@ const Sidebar = (props) => {
                 <NavLink to='/music' /*activeClassName={classes.active}*/ className={classes.item}>Музыка</NavLink>
             </div>
             <div>
-                <NavLink to='/settings' /*activeClassName={classes.active}*/ className={classes.item}>Настройки</NavLink>
+                <NavLink to='/settings' /*activeClassName={classes.active}*/
+                         className={classes.item}>Настройки</NavLink>
             </div>
         </nav>
     );

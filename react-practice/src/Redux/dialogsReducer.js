@@ -1,19 +1,19 @@
 const ADD_MESSAGE = `dialogs/ADD-MESSAGE`;
 
 let initialState = {
-        dialogsData: [
-            {id: 1, name: `Oleg`},
-            {id: 2, name: `Dima`},
-            {id: 3, name: `Pasha`},
-            {id: 4, name: `Kristina`}
-        ],
+    dialogsData: [
+        {id: 1, name: `Oleg`},
+        {id: 2, name: `Dima`},
+        {id: 3, name: `Pasha`},
+        {id: 4, name: `Kristina`}
+    ],
 
-        messagesData: [
-            {id: 1, text: `Hi`},
-            {id: 2, text: `How are you ?`},
-            {id: 3, text: `Oke`},
-        ],
-    };
+    messagesData: [
+        {id: 1, text: `Hi`},
+        {id: 2, text: `How are you ?`},
+        {id: 3, text: `Oke`},
+    ],
+};
 
 const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -26,7 +26,8 @@ const dialogsReducer = (state = initialState, action) => {
                 messagesData: [...state.messagesData, newMessage],
             };
         }
-        default: return state;
+        default:
+            return state;
 
     }
 
