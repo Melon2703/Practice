@@ -14,11 +14,11 @@ const DELETE_ERROR = "Users/DELETE-ERROR"
 const initial = {
     //Количество отображаемых пользователей в таблице
     pageSize: 50,
-    //Текущая страниа
+    //Текущая страница
     currentPage: 1,
     //Пользователи с сервера
     users: [],
-    //Фильтрованные пользователи но основе users +
+    //Фильтрованные пользователи но основе users и параметра фильтрации ( значение из input )
     filteredUsers: null,
     //Статус фильтрации
     isFiltered: false,
@@ -27,7 +27,7 @@ const initial = {
     //Статус загрузки
     isLoading: false,
     //При инициализации и при каждой новой загрузке пользователей (смотреть в thunk) сортировка null,
-    // но в момент клика мы меняем его на true (по возрастанию) или на false(убывание).
+    // но в момент клика мы меняем его на true (по возрастанию) или на false( по убыванию ).
     sorted: null,
     //Отслеживаем столбец сортировки, если он отличен от того, что стоит в state, то зануляем значение
     // sorted и меняем column
@@ -45,7 +45,7 @@ const initial = {
 
 const UsersReducer = (state = initial, action) => {
     switch (action.type) {
-        //СОхранение пользователей с сервера
+        //Сохранение пользователей с сервера
         case SET_USERS: {
             return {
                 ...state,
@@ -210,7 +210,7 @@ const UsersReducer = (state = initial, action) => {
                 showedUsers: null
             }
         }
-        //Создание ошибке после
+        //Создание ошибки
         case CREATE_ERROR: {
             return {
                 ...state,
@@ -232,6 +232,7 @@ const UsersReducer = (state = initial, action) => {
 export const setFilterUsers = (filterOps) => {
     return {
         type: SET_FILTER_USERS,
+        //Параметр фильтрации
         filterOps
     }
 }
