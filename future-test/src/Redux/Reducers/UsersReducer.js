@@ -308,8 +308,7 @@ export const getUsers = (method) => {
                 dispatch(setUsersAC(response.data));
                 dispatch(changeIsLoadingAC(false));
             } else {
-                dispatch(createERROR("ТЕХНИЧЕСКИЕ НЕПОЛАДКИ. ПРИНОСИМ СВОИ ИЗВИНЕНИЯ. ПОЖАЛУЙСТА, НАЖМИТЕ НА КНОПКУ НИЖЕ И ПОПРОБАЙТЕ СНОВА."));
-                dispatch(changeIsLoadingAC(false));
+                throw new Error();
             }
         }).catch(error => {
             dispatch(createERROR("ТЕХНИЧЕСКИЕ НЕПОЛАДКИ. ПРИНОСИМ СВОИ ИЗВИНЕНИЯ. ПОЖАЛУЙСТА, НАЖМИТЕ НА КНОПКУ НИЖЕ И ПОПРОБАЙТЕ СНОВА."));
