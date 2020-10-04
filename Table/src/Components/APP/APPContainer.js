@@ -3,9 +3,11 @@ import './App.scss';
 import {connect} from "react-redux";
 import {
     addUserInTable,
-    changeCurrentPage, deleteERROR,
+    changeCurrentPage,
+    deleteERROR,
     getLargeUsers,
-    getSmallUsers, setFilterUsers,
+    getSmallUsers,
+    setFilterUsers,
     setUser,
     sortTable
 } from "../../Redux/Reducers/UsersReducer";
@@ -23,10 +25,13 @@ function APPContainer(props) {
     }
     return <App getSmallData={props.getSmallUsers} getLargeData={props.getLargeUsers}
                 addUserInTable={props.addUserInTable}
-                sortTable={props.sortTable} setUser={props.setUser} changeCurrentPage={props.changeCurrentPage}
+                sortTable={props.sortTable} setUser={props.setUser}
+                changeCurrentPage={props.changeCurrentPage}
                 allUsers={props.Users}
-                User={props.User} Users={props.showedUsers} isLoading={props.isLoading} isFiltered={props.isFiltered}
-                totalUsersCount={props.totalUsersCount} pageSize={props.pageSize} currentPage={props.currentPage}
+                User={props.User} Users={props.showedUsers} isLoading={props.isLoading}
+                isFiltered={props.isFiltered}
+                totalUsersCount={props.totalUsersCount} pageSize={props.pageSize}
+                currentPage={props.currentPage}
                 sorted={props.sorted}
                 setFilterUsers={props.setFilterUsers} setDefaultUsers={props.setDefaultUsers}
                 columnName={props.columnName}/>

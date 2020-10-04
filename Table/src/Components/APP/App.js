@@ -21,7 +21,6 @@ function App(props) {
     return (
         <div className="App">
             <header className="App-header">
-
                 <h1>ТЕСТОВОЕ ЗАДАНИЕ</h1>
             </header>
             <div>

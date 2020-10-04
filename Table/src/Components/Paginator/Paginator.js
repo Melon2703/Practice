@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import cn from "classnames";
 import styles from "./Paginator.module.scss"
 
-const Paginator = (props) => {
+function Paginator(props) {
 
     useEffect(() => {
         changePortionNumber(1);
@@ -17,11 +17,6 @@ const Paginator = (props) => {
     //Готовим порции для кнопок
     let potrionCount = Math.ceil(pagesCount / props.portionSize);
     let [portionNumber, changePortionNumber] = useState(1);
-
-    // if (props.currentPage % props.portionSize === 0) {
-    //     --portionNumber;
-    // }
-
 
     let leftSideOfPortion = (portionNumber * props.portionSize) - (props.portionSize - 1);
     let rightSideOfPortion = portionNumber * props.portionSize;

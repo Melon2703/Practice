@@ -137,6 +137,8 @@ const UsersReducer = (state = initial, action) => {
             if (!state.isFiltered) {
                 return {
                     ...state,
+                    sorted: null,
+                    columnName: null,
                     totalUsersCount: ++state.totalUsersCount,
                     users: copyOfUsers,
                     showedUsers: copyOfUsers.filter((item, id) => (id >= (state.currentPage - 1) * state.pageSize) && (id <= state.currentPage * state.pageSize - 1))

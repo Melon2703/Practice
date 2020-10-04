@@ -22,7 +22,6 @@ function Table(props) {
             props.setUser(+target.closest("tr").id);
         }
     }
-    console.log(props.columnName);
     return (
         <table className={cn(styles.table)} onClick={sort_findMethod}>
             <thead>
