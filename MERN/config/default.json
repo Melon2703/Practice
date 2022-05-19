@@ -1,0 +1,6 @@
+{
+  "port": 8003,
+  "mongoUri": "mongodb+srv://danila:123321@cluster0.xbv5r.mongodb.net/app?retryWrites=true&w=majority",
+  "jwtSecret": "SomeSecretString",
+  "baseUrl": "http://localhost:8003"
+}
